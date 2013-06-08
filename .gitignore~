@@ -1,4 +1,11 @@
 *.class
+<<<<<<< HEAD
+
+# Package Files #
+*.jar
+*.war
+*.ear
+=======
 WebContent/WEB-INF/classes/
 .metadata
 target/
@@ -6,3 +13,4 @@ target/
 bin
 build
 !etc/lib/build
+>>>>>>> First commit.
