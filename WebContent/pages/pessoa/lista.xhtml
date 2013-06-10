@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:p="http://primefaces.org/ui"
+	template="/pages/template/template.xhtml">
+
+	<ui:define name="conteudo">
+		<div id="container" >
+			<h:outputText value="Lista de Pessoas" />
+			
+			<h:form>
+				<p:dataTable var="pessoa" value="#{pessoaBean.pessoas}">
+					<p:column headerText="Nome">
+						<h:outputText value="#{pessoa.nome}" />
+					</p:column>
+					<p:column headerText="Nascimento">
+						<h:outputText value="#{pessoa.dataNascimento}" />
+					</p:column>
+					<p:column headerText="Endereço">
+						<h:outputText value="#{pessoa.endereco.rua}" />
+					</p:column>
+				</p:dataTable>
+			</h:form>
+		</div>
+	</ui:define>	
+
+</ui:composition>
