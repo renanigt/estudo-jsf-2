@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:p="http://primefaces.org/ui"
+	template="/pages/template/template.xhtml">
+
+	<ui:define name="conteudo">
+		<div id="container" >
+			<h:outputText value="Cadastro Pessoa" />
+			
+			<h:form>
+				<h:outputLabel value="Nome " />
+				<p:inputText value="#{pessoaBean.pessoa.nome}" /><br />
+				<h:outputLabel value="Data de Nascimento " />
+				<p:inputText value="#{pessoaBean.pessoa.dataNascimento}" >
+					<f:convertDateTime />
+				</p:inputText><br />
+				<h:outputLabel value="Endereço " />
+				<p:inputText value="#{pessoaBean.pessoa.endereco.rua}" /><br />
+				<h:outputLabel value="Número " />
+				<p:inputText value="#{pessoaBean.pessoa.endereco.numero}" /><br />
+				<h:outputLabel value="Complemento " />
+				<p:inputText value="#{pessoaBean.pessoa.endereco.complemento}" /><br />
+				<h:commandButton value="Salvar" action="#{pessoaBean.salvar}" />
+			</h:form>
+		</div>
+	</ui:define>	
+
+</ui:composition>
