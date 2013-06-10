@@ -2,6 +2,7 @@ package br.com.estudojsf.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,8 +17,8 @@ public class Pessoa {
 	private Long id;
 	private String nome;
 	private Date dataNascimento;
-	@OneToOne
-	private Endereco endereco;
+	@OneToOne(cascade=CascadeType.ALL)
+	private Endereco endereco = new Endereco();
 	
 	public Long getId() {
 		return id;
