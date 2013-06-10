@@ -9,23 +9,61 @@
 	template="/pages/template/template.xhtml">
 
 	<ui:define name="conteudo">
-		<div id="container" >
-			<h:outputText value="Cadastro Pessoa" />
+		<div id="container" style="padding-left: 20px;">
+			<div style="padding-bottom:20px;">
+				<h:outputText value="Cadastro Pessoa" style="font-size:20px;" />
+			</div>
 			
 			<h:form>
-				<h:outputLabel value="Nome " />
-				<p:inputText value="#{pessoaBean.pessoa.nome}" /><br />
-				<h:outputLabel value="Data de Nascimento " />
-				<p:inputText value="#{pessoaBean.pessoa.dataNascimento}" >
-					<f:convertDateTime />
-				</p:inputText><br />
-				<h:outputLabel value="Endereço " />
-				<p:inputText value="#{pessoaBean.pessoa.endereco.rua}" /><br />
-				<h:outputLabel value="Número " />
-				<p:inputText value="#{pessoaBean.pessoa.endereco.numero}" /><br />
-				<h:outputLabel value="Complemento " />
-				<p:inputText value="#{pessoaBean.pessoa.endereco.complemento}" /><br />
-				<h:commandButton value="Salvar" action="#{pessoaBean.salvar}" />
+				<table>
+					<tr>
+						<td>
+							<h:outputLabel value="Nome " />
+						</td>
+						<td>
+							<p:inputText value="#{pessoaBean.pessoa.nome}" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h:outputLabel value="Data de Nascimento " />
+						</td>
+						<td>
+							<p:inputText value="#{pessoaBean.pessoa.dataNascimento}" >
+								<f:convertDateTime />
+							</p:inputText>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h:outputLabel value="Endereço " />
+						</td>
+						<td>
+							<p:inputText value="#{pessoaBean.pessoa.endereco.rua}" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h:outputLabel value="Número " />
+						</td>
+						<td>
+							<p:inputText value="#{pessoaBean.pessoa.endereco.numero}" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h:outputLabel value="Complemento " />
+						</td>
+						<td>
+							<p:inputText value="#{pessoaBean.pessoa.endereco.complemento}" />
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right">
+							<p:commandButton value="Salvar" action="#{pessoaBean.salvar}" ajax="false" />
+						</td>
+					</tr>
+				</table>
 			</h:form>
 		</div>
 	</ui:define>	
