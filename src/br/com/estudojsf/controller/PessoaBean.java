@@ -21,16 +21,21 @@ public class PessoaBean implements Serializable {
 	@ManagedProperty("#{pessoaService}")
 	private PessoaService pessoaService;
 	
-	public String salvar() {
+	public void salvar() {
 		pessoaService.salvar(pessoa);
-		lista();
+		listar();
+	}
+	
+	public String listar() {
+		pessoas = pessoaService.lista();
 		return "lista";
 	}
 	
-	public void lista() {
-		pessoas = pessoaService.lista();
+	public void remover() {
+		pessoaService.deletar(pessoa);
+		listar();
 	}
-	
+
 	public List<Pessoa> getPessoas() {
 		return pessoas;
 	}

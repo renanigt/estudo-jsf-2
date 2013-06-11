@@ -9,11 +9,17 @@
 	template="/pages/template/template.xhtml">
 
 	<ui:define name="conteudo">
-		<div id="container" >
-			<h:outputText value="Lista de Pessoas" />
-			
+		<div id="container" style="padding-left: 20px;padding-right:20px;">
+			<div style="padding-bottom:20px;">
+				<h:outputText value="Lista de Pessoas" style="font-size:20px;" />
+			</div>
+
 			<h:form>
+				<t:saveState value="#{pessoaBean.pessoas}" />
 				<p:dataTable var="pessoa" value="#{pessoaBean.pessoas}">
+					<p:column headerText="Id">
+						<h:outputText value="#{pessoa.id}" />
+					</p:column>
 					<p:column headerText="Nome">
 						<h:outputText value="#{pessoa.nome}" />
 					</p:column>
@@ -22,6 +28,11 @@
 					</p:column>
 					<p:column headerText="Endereço">
 						<h:outputText value="#{pessoa.endereco.rua}" />
+					</p:column>
+					<p:column>
+						<h:commandLink value="Deletar" action="#{pessoaBean.remover}">
+							<f:setPropertyActionListener value="#{pessoa}" target="#{pessoaBean.pessoa}" />
+						</h:commandLink>
 					</p:column>
 				</p:dataTable>
 			</h:form>

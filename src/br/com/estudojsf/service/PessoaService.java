@@ -22,6 +22,10 @@ public class PessoaService {
 		entityManager.persist(pessoa);
 	}
 	
+	public void deletar(Pessoa pessoa) {
+		entityManager.remove(entityManager.merge(pessoa));
+	}
+	
 	@Transactional(propagation=Propagation.SUPPORTS, readOnly=true)
 	public List<Pessoa> lista() {
 		return entityManager.createQuery("from Pessoa", Pessoa.class)
